@@ -63,7 +63,17 @@ class MainActivity : AppCompatActivity() {
                 allTanStop?.let {
 
                     for (tanStop in it) {
+
                         Log.d("TAN", "Stop Tan ${tanStop.libelle}")
+
+                        tanStop.ligne?.let {
+                            Log.d("TAN","Nombre de Ligne : ${it.size}")
+                            it.forEach {
+                                Log.d("TAN","Ligne : ${it.numLigne}")
+                            }
+                        } ?: run {
+                            Log.d("TAN","Il n y a pas de ligne !")
+                        }
                     }
                 }
             }
